@@ -28,6 +28,12 @@ export class UserInput {
 }
 
 @InputType()
+export class GetUserByIDInput {
+  @Field({ nullable: false })
+  id: string;
+}
+
+@InputType()
 export class DeleteUserInput {
   @Field({ nullable: false })
   id: string;

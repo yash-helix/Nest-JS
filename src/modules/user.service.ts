@@ -4,7 +4,7 @@ import { randomUUID } from 'crypto';
 import { data } from 'staticData';
 import {Repository} from 'typeorm';
 
-import { DeleteUserInput, UpdateUserInput, User, UserInput } from './user.model';
+import { DeleteUserInput, GetUserByIDInput, UpdateUserInput, User, UserInput } from './user.model';
 
 @Injectable()
 export class UserService {
@@ -17,8 +17,9 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  findById(id: string) {
-    return this.userRepository.findOne({where:{id:id}});
+  getUserById(input: GetUserByIDInput) {
+    console.log(input)
+    return this.userRepository.findOne({where:{id:input.id}});
   }
 
   async createUser( data: UserInput ) {
