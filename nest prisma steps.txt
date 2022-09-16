@@ -1,0 +1,21 @@
+In this session we'll be learning how to use prisma with nestJs and graphql while using postgresql as database.
+
+1.  create a new nestJs project.
+
+2.  install prisma using "npm install prisma --save-dev"
+
+3.  after prisma is installed we will now write a schema for it.
+    For that first I'll create a folder in the project as "prisma". Inside that folder i will create a prisma file named as "schema.prisma". In this file we will be having our database connection setup and the schemas for the tables. 
+    First start with database configuration:
+    code: 
+        datasource db {
+            provider = "postgresql"
+            url = env("DATABASE_URL")
+        }
+    here, database connection is configured in the datasource block. We're using postgresql so we're providing it in the provider if it had been sqlite we would provide "sqlite" as provider.
+    With PostgreSQL and MySQL, we need to configure the connection URL to point to the database server, this url will be stored in the .env file.
+    ex: DATABASE_URL="postgres://USER:PASSWORD@HOST:PORT/DATABASE"
+
+4.  Now we can generate your SQL migration files and run them against the database.
+    using the command in terminal: "npx prisma migrate dev --name init"
+    migration files are created in the existing prisma folder.
