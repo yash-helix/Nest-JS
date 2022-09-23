@@ -1,5 +1,5 @@
 import { Args, Mutation, Query, Resolver } from "@nestjs/graphql";
-import { CreateUserInput, UpdateUserInput } from "src/graphql";
+import { CreateUserInput, UpdateUserInput } from "../graphql";
 import { UserService } from "./user.service";
 
  @Resolver('PrismaUser')
@@ -7,12 +7,12 @@ import { UserService } from "./user.service";
     constructor(private readonly user: UserService){}
 
    @Query('users')
-   async users(){
+   async getUsers(){
     return this.user.getUsers();
    }
 
    @Query('user')
-   async SingleUser(@Args('id') args:string){
+   async getUser(@Args('id') args:string){
     return this.user.getUser(args);
    }
 

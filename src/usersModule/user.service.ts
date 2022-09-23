@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { CreateUserInput, UpdateUserInput, User } from "src/graphql";
-import { PrismaService } from "src/prisma.service";
+import { CreateUserInput, UpdateUserInput, User } from "../graphql";
+import { PrismaService } from "../prisma.service";
 
  @Injectable()
  export class UserService{
@@ -50,7 +50,7 @@ import { PrismaService } from "src/prisma.service";
         try {
             await this.prisma.prismaUsers.delete({where:{id:id}})
             return "User Deleted"
-        } 
+        }
         catch (error) {
             return "Error Occurred"
         }
