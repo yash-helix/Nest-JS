@@ -9,6 +9,10 @@ export const userStub = (): User => {
     }
 }
 
+export const createUser = () => {
+    return "User created successfully"
+}
+
 export const updateUser = () => {
     return "User updated successfully"
 }
