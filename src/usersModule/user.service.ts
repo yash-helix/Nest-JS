@@ -39,10 +39,10 @@ import { PrismaService } from "../prisma.service";
                     updatedAt:String(new Date())
                 }
             });
-            return "User updated sucessfully :)"
+            return "a"
         } 
         catch (error) {
-            return "User updation failed, Unexpected error occurred :("
+            return "a"
         }
     }
 
