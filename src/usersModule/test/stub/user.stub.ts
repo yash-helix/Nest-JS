@@ -8,3 +8,11 @@ export const userStub = (): User => {
         updatedAt:"29-09-2022"
     }
 }
+
+export const updateUser = () => {
+    return "User updated successfully"
+}
+
+export const deleteUser = () => {
+    return "User deleted successfully"
+}
